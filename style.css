@@ -1,0 +1,271 @@
+
+* {
+     margin: 0; 
+     padding: 0; box-sizing: border-box; 
+     font-family: 'Arial', sans-serif; }
+
+.main-header {
+  position: relative;
+  height: 100vh; 
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+
+.bg-slider {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: -1; 
+}
+
+.slide {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideAnimation 12s infinite; 
+}
+
+.slide1 { 
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('asset/salle1.jpg');
+}
+.slide2 { 
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('asset/cafe1.jpg');
+  animation-delay: 4s; 
+}
+.slide3 { 
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url('asset/cafe2.jpg'); 
+  animation-delay: 8s; 
+}
+
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  33% { opacity: 1; }
+  43% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #492f15;
+  padding: 10px;
+  position: sticky;
+  z-index: 10;
+  width: 100%;
+}
+
+.logo { 
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+}
+.nav-links li { 
+    margin-left: 25px;
+}
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 14px; 
+  }
+
+.hero-content {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  width: 80%;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px; 
+}
+
+.btn-primary, 
+.btn-secondary {
+  padding: 12px 25px;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.btn-primary { 
+    background: #d4a373; 
+    color: white; 
+}
+.btn-secondary { 
+    border: 1px solid white; 
+    color: white; 
+}
+
+.about_section {
+    padding: 60px 30px;
+    background-color: #e9e5e1;
+}
+.about_section h2{
+    font-size: 35px;
+    color: #492f15;
+    font-weight: 700;
+    text-align: center;
+}
+.child_about{
+    display: flex;
+    justify-content: space-between;
+    max-width: 950px;
+    margin: auto;
+    padding-top: 70px;
+    gap: 20px;
+}
+.about_img img{
+    width: 100%;       /* Prend toute la place de son conteneur parent */
+    max-width: 600px;  /* Mais ne grandira jamais au-delà de 400px sur grand écran */
+    height: auto;      /* Garde les proportions d'origine de l'image */
+    border-radius: 20px;
+}
+.about_contenu h3{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #492f15;
+    font-weight: 500;
+}
+.about_contenu p{
+    color: #492f15;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.about_contenu a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #d4a373;
+    color: #000;
+    padding: 10px 20px ;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.menu_section {
+  background-color: #cfb499;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  text-align: center;
+  padding: 60px ;
+}
+.menu_section h2 {
+    font-size: 35px;
+    color: #492f15;
+    font-weight: 700;
+  
+}
+.child_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; 
+    margin: auto;             
+}
+.card_menu img{
+  display: block;
+  margin-top: 50px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.card_body {
+    background-color: #fff;
+    width: 300px;
+    margin-top: 0;
+    padding: 20px ;
+    display: flex;
+    flex-direction: column; /* Force le titre et le texte à s'empiler verticalement */
+    gap: 10px;              /* Crée un espace uniforme entre le titre et le texte */
+}
+.card_body h5{
+  font-weight: 500;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 10px;
+}
+.card_body p{
+  font-size: 12px;
+  font-weight: 300;
+  color: #000; 
+}
+/* ==========================================================================
+   MEDIA QUERY : Pour les écrans de smartphones (Moins de 768px de large)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+  /* 1. Ajustement global de la hauteur du Header */
+  .main-header {
+    height: auto;
+    min-height: 100vh; /* Permet au contenu de s'étirer si le texte prend de la place */
+  }
+  .logo{
+    font-weight: 100;
+  }
+
+  /* 2. Adaptation des textes de présentation (Évite que le gros titre déborde) */
+  .hero-content h1 {
+    font-size: 32px; /* Réduction de la taille du texte sur mobile */
+    line-height: 1.3;
+  }
+
+  /* 3. Section À PROPOS : On passe d'un affichage côte à côte à un affichage vertical */
+  .child_about {
+    flex-direction: column;   /* Aligne l'image et le texte de haut en bas */
+    align-items: center;      /* Centre les éléments horizontalement */
+    text-align: center;       /* Centre tout le texte à l'intérieur */
+    padding-top: 40px;        /* Réduit l'espace du haut sur mobile */
+  }
+
+  .about_img img {
+    width: 100%;
+    max-width: 350px;         /* L'image ne dépassera jamais du téléphone */
+    height: auto;
+  }
+
+  .about_contenu {
+    width: 100%;              /* Le texte prend toute la largeur disponible */
+    padding: 0 10px;          /* Petite sécurité pour que le texte ne colle pas aux bords de l'écran */
+  }
+
+  /* 4. Section MENU : Alignement et gestion des cartes */
+  .child_menu {
+    gap: 20px;                /* Espace légèrement réduit entre les cartes */
+  }
+
+  .card_menu img {
+    width: 100%;              /* L'image s'adapte à la largeur de la carte */
+    height: 180px;            /* Hauteur stable pour mobile */
+    object-fit: cover;        /* Évite toute déformation des photos de plats */
+    margin-top: 20px;         /* Réduction de la grosse marge du haut */
+  }
+
+  .card_body {
+    width: 100%;              /* La carte s'adapte proprement au conteneur */
+    max-width: 300px;         /* Garde sa taille élégante d'origine */
+    display: flex;
+    flex-direction: column;   /* Titre au-dessus, description en-dessous */
+    align-items: center;      /* Centre le texte à l'intérieur de la carte blanche */
+    text-align: center;
+  }
+}
