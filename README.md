@@ -5,10 +5,11 @@ Bienvenue sur le dépôt de notre site vitrine pour un café / restaurant. Ce pr
 ##  Fonctionnalités
 
 *   **Bannière Hero animée :** Un curseur (slider) d'arrière-plan en CSS pur qui fait défiler des images d'ambiance avec un effet de fondu enchaîné.
-*   **Barre de navigation collante :** Une `navbar` fixe qui reste accessible pendant le défilement.
+*   **Barre de navigation collante :** Une `navbar` fixe qui reste accessible pendant le défilement. Lorsque vous cliquez sur chacun des liens, ils vous amèneront directement à la section cliquée. 
 *   **Section À Propos :** Une mise en page flexible mettant en avant l'histoire et l'identité visuelle du café.
 *   **Grille de Menu Dynamique :** Une section présentant les produits sous forme de cartes ("cards") soignées.
 *   **Design 100% Mobile-Responsive :** Le site s'adapte parfaitement aux smartphones, tablettes et ordinateurs grâce aux `media queries` CSS.
+
 
 ## Technologies Utilisées
 
